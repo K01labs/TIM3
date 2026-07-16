@@ -1,0 +1,73 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Block outside PRs from modifying the benchmark/scoring/data core. Trusted
+  # authors (maintainers, members, collaborators) skip this; CODEOWNERS review
+  # covers their changes. Contributors may only add models/<name>/, append to
+  # models/registry.py, and add a leaderboard/<name>/ entry.
+  guard:
+    if: ${{ github.event_name == 'pull_request' && !contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.pull_request.author_association) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reject changes to protected core paths
+        env:
+          BASE: ${{ github.base_ref }}
+        run: |
+          git fetch --no-tags origin "$BASE"
+          changed=$(git diff --name-only "origin/$BASE...HEAD")
+          echo "Changed files:"; echo "$changed"
+          protected='^(benchmark/|data/dataloaders/|scripts/|\.github/|models/(base|harness|run|_io)\.py|pyproject\.toml|uv\.lock|tests/fixtures/|tests/test_(golden|benchmark|benchmark_integration|run|harness)\.py)'
+          violations=$(echo "$changed" | grep -E "$protected" || true)
+          if [ -n "$violations" ]; then
+            echo "::error::This PR modifies protected benchmark/core code:"
+            echo "$violations" | sed 's/^/  - /'
+            echo "Model submissions may only add models/<name>/, append one line to models/registry.py, and add leaderboard/<name>/. Core changes require a maintainer."
+            exit 1
+          fi
+          echo "OK: no protected paths changed."
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - run: uv sync
+      - name: ruff format
+        run: uv run ruff format --check .
+      - name: ruff lint
+        run: uv run ruff check .
+      - name: ty (advisory)
+        run: uv run ty check
+        continue-on-error: true
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          python-version: ${{ matrix.python-version }}
+      - run: uv sync
+      # Network tests (live S3 / model downloads) are excluded by default via
+      # pyproject `addopts = -m 'not network'`; this run is offline.
+      - name: pytest (offline)
+        run: uv run pytest

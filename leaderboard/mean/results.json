@@ -1,0 +1,44 @@
+{
+  "note": "Paper baseline transcribed from the appendix Baseline Scores table; per-sample / per-signal-channel detail is not available for these seed entries.",
+  "nmae": 0.647,
+  "nrmse": 0.713,
+  "n_domains": 3,
+  "per_domain": [
+    {
+      "domain": "fusion",
+      "nmae": 0.493,
+      "nrmse": 0.556,
+      "n_tasks": 4,
+      "per_task": [
+        {"task": "forecasting", "nmae": 0.474, "nrmse": 0.505},
+        {"task": "offline_imputation", "nmae": 0.468, "nrmse": 0.545},
+        {"task": "causal_imputation", "nmae": 0.483, "nrmse": 0.517},
+        {"task": "cross_modal", "nmae": 0.545, "nrmse": 0.659}
+      ]
+    },
+    {
+      "domain": "healthcare",
+      "nmae": 0.783,
+      "nrmse": 0.857,
+      "n_tasks": 4,
+      "per_task": [
+        {"task": "forecasting", "nmae": 0.753, "nrmse": 0.807},
+        {"task": "offline_imputation", "nmae": 0.786, "nrmse": 0.877},
+        {"task": "causal_imputation", "nmae": 0.786, "nrmse": 0.877},
+        {"task": "cross_modal", "nmae": 0.807, "nrmse": 0.867}
+      ]
+    },
+    {
+      "domain": "tcprimed",
+      "nmae": 0.667,
+      "nrmse": 0.726,
+      "n_tasks": 4,
+      "per_task": [
+        {"task": "forecasting", "nmae": 0.688, "nrmse": 0.732},
+        {"task": "offline_imputation", "nmae": 0.630, "nrmse": 0.675},
+        {"task": "causal_imputation", "nmae": 0.630, "nrmse": 0.675},
+        {"task": "cross_modal", "nmae": 0.719, "nrmse": 0.823}
+      ]
+    }
+  ]
+}

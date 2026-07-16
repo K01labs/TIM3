@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite the paper below."
+title: "Towards Benchmarking Time Series Foundation Models on Native Scientific Data"
+authors:
+  - family-names: "O'Donnell"
+    given-names: "Lewis"
+    affiliation: "University College London"
+  - family-names: "Kolbeinsson"
+    given-names: "Arinbjörn"
+    affiliation: "K01"
+  - family-names: "Kolbeinsson"
+    given-names: "Benedikt"
+    affiliation: "K01"
+  - family-names: "Deisenroth"
+    given-names: "Marc Peter"
+    affiliation: "University College London"
+year: 2026
+preferred-citation:
+  type: conference-paper
+  title: "Towards Benchmarking Time Series Foundation Models on Native Scientific Data"
+  authors:
+    - family-names: "O'Donnell"
+      given-names: "Lewis"
+    - family-names: "Kolbeinsson"
+      given-names: "Arinbjörn"
+    - family-names: "Kolbeinsson"
+      given-names: "Benedikt"
+    - family-names: "Deisenroth"
+      given-names: "Marc Peter"
+  collection-title: "2nd ICML Workshop on Foundation Models for Structured Data"
+  year: 2026
+  url: "https://openreview.net/forum?id=NtU2gLl4hN"

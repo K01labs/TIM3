@@ -1,0 +1,40 @@
+# Code owners for the benchmark core.
+#
+# Changes to these paths require review from a maintainer. This is enforced once
+# the public repo has branch protection with "Require review from Code Owners"
+# enabled (a branch-protection repo setting). @lewisodonnell may be replaced
+# with a maintainer team (e.g. @K01labs/maintainers) for team-based review.
+#
+# Contributors do NOT need to touch any of these: a model submission adds
+# models/<name>/, appends one line to models/registry.py (reviewed here), and
+# adds a leaderboard/<name>/ entry. The CI path-guard (.github/workflows/ci.yml)
+# fails an outside PR that changes anything else below.
+
+# Benchmark evaluator: metrics, tasks, specs, data loading, run orchestration
+/benchmark/                            @lewisodonnell
+
+# Dataset builders, which must produce the canonical benchmark data
+/data/dataloaders/                     @lewisodonnell
+
+# Shared model interface, harness, CLI, prediction I/O, and the registry
+/models/base.py                        @lewisodonnell
+/models/harness.py                     @lewisodonnell
+/models/run.py                         @lewisodonnell
+/models/_io.py                         @lewisodonnell
+/models/registry.py                    @lewisodonnell
+
+# Submission / leaderboard tooling
+/scripts/                              @lewisodonnell
+
+# Golden + core tests (the behavioural pin on the scoring code)
+/tests/test_golden.py                  @lewisodonnell
+/tests/test_benchmark.py               @lewisodonnell
+/tests/test_benchmark_integration.py   @lewisodonnell
+/tests/test_run.py                     @lewisodonnell
+/tests/test_harness.py                 @lewisodonnell
+/tests/fixtures/                       @lewisodonnell
+
+# Packaging, lockfile, CI/workflows
+/pyproject.toml                        @lewisodonnell
+/uv.lock                               @lewisodonnell
+/.github/                              @lewisodonnell

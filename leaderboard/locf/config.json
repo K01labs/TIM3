@@ -1,0 +1,14 @@
+{
+  "model_name": "LOCF",
+  "model_type": "statistical",
+  "evaluation_mode": "zero-shot",
+  "checkpoint": null,
+  "organization": "Benchmark authors (paper baseline)",
+  "code_url": "https://openreview.net/forum?id=NtU2gLl4hN",
+  "test_data_leakage": "none; deterministic baseline, uses no training data",
+  "preprocessing": "Last observation carried forward to each query timestamp",
+  "hardware": "n/a",
+  "runtime_total_seconds": 0,
+  "benchmark_commit": "paper-v1",
+  "source": "Paper appendix, Baseline Scores table (OpenReview NtU2gLl4hN)"
+}

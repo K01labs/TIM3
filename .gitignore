@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Runtime logs
+logs/
+
+# Materialised healthcare data
+data/healthcare_data/
+data/healthcare_smoke/
+data/healthcare_smoke2/
+data/healthcare_smoke5/
+
+# Environment
+/.venv
+
+# ruff cache
+.ruff_cache/
+
+# Data files
+*.nc
+data/fusion_data/
+data/tcprimed_data/
+*.parquet
+data/mimic-4
+data/mimic-4-processed
+Data/mimic-4
+Data/mimic-4-processed
+*.ipynb
+!tutorials/tutorial.ipynb
+data/physionet.org/
+# Jupyter
+*.ipynb_checkpoints/
+data_explorer.ipynb
+Data/Dataloaders/MAST_level1.ipynb
+Data/Dataloaders/MAST_level2.ipynb
+Tutorials/fusion_data_explorer.ipynb
+
+#shell scripts
+*.sh
+# Model weights
+*.pt
+Model/
+
+# Figures
+figures/*.pdf
+figures/*.png
+
+# Test / lint
+.pytest_cache/
+
+# Old Files
+Legacy/
+
+# Paper sources live on the feat/POSTER branch, not in the open-source tree
+papers/
+
+# Agent files
+AGENTS_PRIVATE.md
+CLAUDE.md
+GEMINI.md
+.claude

@@ -1,0 +1,26 @@
+name: leaderboard
+
+# Validates leaderboard submissions and checks LEADERBOARD.md is regenerated.
+# Uses plain Python; the validator and builder are stdlib-only, so no heavy
+# benchmark environment is needed.
+
+on:
+  pull_request:
+    paths:
+      - "leaderboard/**"
+      - "scripts/validate_submission.py"
+      - "scripts/build_leaderboard.py"
+      - "LEADERBOARD.md"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate all submissions
+        run: python scripts/validate_submission.py --all
+      - name: Check LEADERBOARD.md is up to date
+        run: python scripts/build_leaderboard.py --check

@@ -1,0 +1,261 @@
+{
+  "0": {
+    "name": "static_context",
+    "category": "static",
+    "n_channels": 3,
+    "value_dim": 1,
+    "time_dim": null,
+    "unit": "",
+    "source": "static",
+    "group": "atcf_id",
+    "channel_labels": [
+      "basin_code",
+      "season",
+      "storm_number"
+    ]
+  },
+  "1": {
+    "name": "track_intensity",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "kt",
+    "source": "env",
+    "group": "storm_metadata",
+    "var": "intensity"
+  },
+  "2": {
+    "name": "track_pressure",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "hPa",
+    "source": "env",
+    "group": "storm_metadata",
+    "var": "central_min_pressure"
+  },
+  "3": {
+    "name": "track_speed",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "m s-1",
+    "source": "env",
+    "group": "storm_metadata",
+    "var": "storm_speed"
+  },
+  "4": {
+    "name": "track_heading",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "degree",
+    "source": "env",
+    "group": "storm_metadata",
+    "var": "storm_heading"
+  },
+  "5": {
+    "name": "diag_sst",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "K",
+    "source": "env",
+    "group": "diagnostics",
+    "var": "sst"
+  },
+  "6": {
+    "name": "diag_mpi",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "kt",
+    "source": "env",
+    "group": "diagnostics",
+    "var": "potential_intensity_empirical"
+  },
+  "7": {
+    "name": "diag_shear_magnitude",
+    "category": "scalar_multichannel",
+    "n_channels": 8,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "m s-1",
+    "source": "env",
+    "group": "diagnostics",
+    "var": "shear_magnitude",
+    "channel_labels": [
+      "shallow_0_300km",
+      "shallow_0_500km",
+      "shallow_0_800km",
+      "shallow_200_800km",
+      "deep_0_300km",
+      "deep_0_500km",
+      "deep_0_800km",
+      "deep_200_800km"
+    ]
+  },
+  "8": {
+    "name": "diag_shear_direction",
+    "category": "scalar_multichannel",
+    "n_channels": 8,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "degree",
+    "source": "env",
+    "group": "diagnostics",
+    "var": "shear_direction",
+    "channel_labels": [
+      "shallow_0_300km",
+      "shallow_0_500km",
+      "shallow_0_800km",
+      "shallow_200_800km",
+      "deep_0_300km",
+      "deep_0_500km",
+      "deep_0_800km",
+      "deep_200_800km"
+    ]
+  },
+  "9": {
+    "name": "diag_precipitable_water",
+    "category": "scalar_multichannel",
+    "n_channels": 5,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "kg m-2",
+    "source": "env",
+    "group": "diagnostics",
+    "var": "precipitable_water"
+  },
+  "10": {
+    "name": "diag_warm_core",
+    "category": "scalar_multichannel",
+    "n_channels": 23,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "K",
+    "source": "env",
+    "group": "diagnostics",
+    "var": "temperature_anomaly"
+  },
+  "11": {
+    "name": "diag_phase_b",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "m",
+    "source": "env",
+    "group": "diagnostics",
+    "var": "cyclone_phase_space_b_parameter"
+  },
+  "12": {
+    "name": "diag_vertical_velocity",
+    "category": "scalar_multichannel",
+    "n_channels": 4,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "m s-1",
+    "source": "env",
+    "group": "diagnostics",
+    "var": "vertical_velocity_average"
+  },
+  "13": {
+    "name": "overpass_intensity",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "knots",
+    "source": "overpass",
+    "group": "overpass_storm_metadata",
+    "var": "intensity"
+  },
+  "14": {
+    "name": "overpass_pressure",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "hPa",
+    "source": "overpass",
+    "group": "overpass_storm_metadata",
+    "var": "central_min_pressure"
+  },
+  "15": {
+    "name": "overpass_speed",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "m/s",
+    "source": "overpass",
+    "group": "overpass_storm_metadata",
+    "var": "storm_speed"
+  },
+  "16": {
+    "name": "overpass_distance_to_land",
+    "category": "scalar_single",
+    "n_channels": 1,
+    "value_dim": 1,
+    "time_dim": "time",
+    "unit": "km",
+    "source": "overpass",
+    "group": "overpass_storm_metadata",
+    "var": "distance_to_land"
+  },
+  "17": {
+    "name": "gprof_surface_precip",
+    "category": "field_2d",
+    "n_channels": 1,
+    "value_dim": -1,
+    "time_dim": "time",
+    "unit": "mm hr-1",
+    "source": "overpass",
+    "group": "GPROF/S1",
+    "var": "surfacePrecipitation",
+    "variable_length": true
+  },
+  "18": {
+    "name": "gprof_ice_water_path",
+    "category": "field_2d",
+    "n_channels": 1,
+    "value_dim": -1,
+    "time_dim": "time",
+    "unit": "kg m-2",
+    "source": "overpass",
+    "group": "GPROF/S1",
+    "var": "iceWaterPath",
+    "variable_length": true
+  },
+  "19": {
+    "name": "ir_brightness_temp",
+    "category": "field_2d",
+    "n_channels": 1,
+    "value_dim": -1,
+    "time_dim": "time",
+    "unit": "K",
+    "source": "overpass",
+    "group": "infrared",
+    "var": "IRWIN",
+    "variable_length": true
+  },
+  "20": {
+    "name": "radar_precip_rate",
+    "category": "field_2d",
+    "n_channels": 1,
+    "value_dim": -1,
+    "time_dim": "time",
+    "unit": "mm hr-1",
+    "source": "overpass",
+    "group": "radar_radiometer",
+    "var": "nearSurfPrecipTotRate",
+    "variable_length": true
+  }
+}
