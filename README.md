@@ -6,7 +6,7 @@ TIM3 is a cross-domain benchmark for evaluating time-series foundation models on
 
 Most time-series benchmarks align all observations to a uniform grid before any model sees the data. In scientific domains this preprocessing step discards temporal structure and silently changes model rankings. This benchmark stores data as **observation sets** at native resolution, and treats resampling as a modelling choice rather than a hidden design constant.
 
-Companion code for the paper *Towards Benchmarking Time Series Foundation Models on Native Scientific Data* (ICML 2026 FMSD workshop).
+Companion code for the paper [*Towards Benchmarking Time Series Foundation Models on Native Scientific Data*](https://k01.is/research/towards-benchmarking-time-series-foundation-models-on-native-scientific-data) (ICML 2026 FMSD workshop; [OpenReview](https://openreview.net/forum?id=NtU2gLl4hN)).
 
 ## The benchmark at a glance
 
